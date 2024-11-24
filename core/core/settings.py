@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'viaInteligente.apps.ViainteligenteConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

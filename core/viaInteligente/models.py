@@ -35,3 +35,4 @@ class Acidente(models.Model):
 
     def __str__(self):
         return f"Acidente {self.id} - {self.status.nome if self.status else 'Sem status'}"
+    
