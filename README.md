@@ -78,27 +78,6 @@ python manage.py runserver
 
 ---
 
-## Convenções de Código
-
-- Utilize **PEP8** para o estilo de código. 
-  - Para instalar o Autopep8 no VSCode, acesse o [link oficial](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8).
-- Commit messages devem ser descritivos: `Adicionei o endpoint para detecção de acidentes`.
-
----
-
-## Contribuição
-1. Crie um branch para sua feature:
-   ```bash
-   git checkout -b feature/<nome-da-feature>
-   ```
-2. Envie suas alterações para revisão:
-   ```bash
-   git push origin feature/<nome-da-feature>
-   ```
-3. Abra um Pull Request no repositório principal.
-
----
-
 ## Configuração do Git Ignore
 O projeto já está configurado para ignorar arquivos desnecessários como:
 - Ambientes virtuais (`.env/`)
