@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'viaInteligente.apps.ViainteligenteConfig',
-    'rest_framework'
+    'rest_framework',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,15 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Via Inteligente API",
+    "DESCRIPTION": "API para detecção, registro e aprovação de acidentes de trânsito utilizando Django Rest Framework.",
+    "VERSION": "1.0.0",
+    "SERVE INCLUDE SCHEMA": True,
+    "SWAGGER_UI_SETTINGS": {
+        "persistAuthorization": True,
+    },
 }
