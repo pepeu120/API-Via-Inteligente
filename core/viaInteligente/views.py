@@ -13,14 +13,24 @@ class AcidenteCreateView(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend,
                        filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['status', 'criado_por']
-
     search_fields = ['descricao', 'localizacao']
     ordering_fields = ['criado_em', 'modificado_em']
     ordering = ['criado_em']
 
     def perform_create(self, serializer):
-        serializer.save(criado_por=self.request.user,
-                        modificado_por=self.request.user)
+        status_pendente, created = Status.objects.get_or_create(
+            nome='Pendente',
+            defaults={
+                'criado_por': self.request.user,
+                'modificado_por': self.request.user
+            }
+        )
+
+        serializer.save(
+            criado_por=self.request.user,
+            modificado_por=self.request.user,
+            status=status_pendente
+        )
 
     def perform_update(self, serializer):
         serializer.save(modificado_por=self.request.user)
